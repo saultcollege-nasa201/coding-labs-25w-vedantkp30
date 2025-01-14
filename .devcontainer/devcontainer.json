@@ -1,0 +1,23 @@
+{
+    "name": "NASA 201 - Coding Labs",
+    "runArgs": ["--name", "nasa201-coding-labs" ],
+    "image": "mcr.microsoft.com/devcontainers/php:8",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "MS-vsliveshare.vsliveshare",
+                "ritwickdey.LiveServer",
+                "github.copilot",
+                "github.copilot-chat",
+                "bmewburn.vscode-intelephense-client",
+                "xdebug.php-debug"
+            ]
+        }
+    }
+}
