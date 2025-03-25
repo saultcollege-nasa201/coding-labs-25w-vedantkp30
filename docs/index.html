@@ -1,0 +1,48 @@
+<form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span id="nameError" style="color: red;"></span>
+
+    <br><br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea>
+    <span id="messageError" style="color: red;"></span>
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    let isValid = true;
+    let nameField = document.getElementById("name");
+    let messageField = document.getElementById("message");
+
+
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("messageError").innerText = "";
+    nameField.style.border = "";
+    messageField.style.border = "";
+
+
+    if (nameField.value.trim() === "") {
+        document.getElementById("nameError").innerText = "Name is required.";
+        nameField.style.border = "2px solid red";
+        isValid = false;
+    }
+
+
+    if (!messageField.value.toLowerCase().includes("please")) {
+        document.getElementById("messageError").innerText = "Message must include the word 'please'.";
+        messageField.style.border = "2px solid red";
+        isValid = false;
+    }
+
+ 
+    if (!isValid) {
+        event.preventDefault();
+    }
+});
+</script>
